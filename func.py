@@ -1,33 +1,5 @@
 import math
 
-class Vector:
-	def __init__(self,x,y):
-		self.x = x
-		self.y = y
-	def add(self,v):
-		self.x += v.x
-		self.y += v.y
-	def sub(self,v):
-		self.x -= v.x
-		self.y -= v.y
-	def dot(self,v):
-		return self.x*v.x + self.y*v.y
-	def mult(self,s):
-		self.x *= s
-		self.y *= s
-	def div(self,s):
-		if s == 0:
-			return 0
-		self.x /= s
-		self.y /= s
-	def mag(self):
-		return math.sqrt(self.x*self.x + self.y*self.y)
-	def setmag(self,m):
-		self.div(self.mag())
-		self.mult(m)
-	def angle(self):
-		return math.atan2(self.y,self.x)
-
 class Complex:
 	def __init__(self,r,i):
 		self.r = r
