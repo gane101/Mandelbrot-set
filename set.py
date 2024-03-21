@@ -21,6 +21,7 @@ val = Arey(700,700)
 iteration = Arey(700,700)
 c = func.Complex(0,0)
 gen = [0]
+n = 20
 
 for i in range(700):
 	for j in range(700):
@@ -28,7 +29,7 @@ for i in range(700):
 
 start = time.perf_counter()
 
-for i in range(20):
+for i in range(n):
 	img = "{}.png".format(i+1)
 	screen.fill(0)
 	for x in range(700):
@@ -41,7 +42,7 @@ for i in range(20):
 				if iteration.data[x][y] == 0:
 					iteration.data[x][y] = i
 
-			c = iteration.data[x][y]*10
+			c = iteration.data[x][y]*(255/n)
 			pygame.draw.rect(screen,(c,c,c),(x,y,1,1))
 
 	pygame.image.save(screen, img)
